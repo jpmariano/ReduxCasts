@@ -12,63 +12,28 @@ ReactDOM.render
 ```import ReactDOM from "react-dom";```
 JSX functional component
 ```const App = function(){ return <div>Hi!</div>; }```
+
  <App />, //DOM 
- document.querySelector('root') //Target (Could be element, class, id)
-```ReactDOM.render(
-    <App />, //DOM 
-    document.querySelector('root') //Target (Could be element, class, id)
-);```
+document.querySelector('root') //Target (Could be element, class, id)
+
+```ReactDOM.render( <App />, document.querySelector('root') //Target (Could be element, class, id) );```
 
 ### STEP 2: ReduxCasts/video_browser/src/components/search_bar.js
 Notice how we only have Import React and not the ReactDOM
-```
-import React from 'react';
 
-const SearchBar = () => {
-    return <input />;
-}
-export default SearchBar;```
+``` import React from 'react'; const SearchBar = () => { return <input />; } export default SearchBar;```
 
 ### STEP 3: ReduxCasts/video_browser/src/index.js
 
-```
-import React from 'react';
-import ReactDOM from "react-dom";
 
-import SearchBar from "./components/search_bar";
-
-const App = function(){ 
-    return (
-        <div>
-            <SearchBar />
-        </div>; 
-    )
-}
-
-ReactDOM.render(
-    <App />, 
-    document.querySelector('root') 
-);```
+``` import React from 'react'; import ReactDOM from "react-dom"; import SearchBar from "./components/search_bar"; const App = function(){ return ( <div> <SearchBar /> </div>; ) } ReactDOM.render(<App />, document.querySelector('root') );```
 
 ### STEP 4: Convert Functional Component to Class Component
 ReduxCasts/video_browser/src/components/search_bar.js
 
 #### Functional Component 
-```
-import React from 'react';
-
-const SearchBar = () => {
-    return <input />;
-}
-export default SearchBar;```
+``` import React from 'react'; const SearchBar = () => { return <input />; } export default SearchBar;```
 
 #### Class Component 
-```
-class SearchBar extends React.Component {
-  render() {
-    return (
-        <input />
-    );
-  }
-}```
+``` class SearchBar extends React.Component { render() { return ( <input /> ); }}```
 
