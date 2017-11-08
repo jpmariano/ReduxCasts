@@ -1,6 +1,14 @@
 import React from "react";
 
-const VideoDetail = ({ video }) => {
+{/*React needs to be imported because JSX will call React.createElement 
+VideoDetail - stateless component
+stateless component: No lifecycle hook and refs 
+
+- const VideoDetail = ({ video })  - you can use props or just access { video } 
+  - VideoDetail video is passed from parent component index.js 
+- Handling Null = if (!video)  
+*/}
+const VideoDetail = ({ video }) => { 
   if (!video) {
     return <div>Loading...</div>;
   }
@@ -21,4 +29,5 @@ const VideoDetail = ({ video }) => {
   );
 };
 
+{/*What compotent will import VideoDetail will get the component of the VideoDetail */}
 export default VideoDetail;

@@ -1,5 +1,10 @@
 import React from "react";
-
+{/*
+Notice { video, onVideoSelect } - instead of using props you can access them directly
+  - the video/onVideoSelect prop is passed from index.js -> video_list.js -> video_list_item.js 
+  - the onVideoSelect prop which contain anonymous function is passed from index.js -> video_list.js -> video_list_item.js 
+    - try not to go morethan two level deep
+*/}
 const VideoListItem = ({ video, onVideoSelect }) => {
   const imageUrl = video.snippet.thumbnails.default.url;
 

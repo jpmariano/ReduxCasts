@@ -1,12 +1,23 @@
 import _ from "lodash";
-import React, { Component } from "react";
+import React, { Component } from "react"; {/* https://stackoverflow.com/questions/34114350/react-vs-reactdom */}
 import ReactDOM from "react-dom";
 import YTSearch from "youtube-api-search";
-import SearchBar from "./components/search_bar";
+import SearchBar from "./components/search_bar"; {/* Searchbar Step 1 : Notice how filename is imported*/}
 import VideoList from "./components/video_list";
 import VideoDetail from "./components/video_detail";
 const API_KEY = "AIzaSyAuQCVeNfKhtRk9KlChQPT1nO27DPO_5Ss";
 
+ {/* Parent Component: ES6 Class Component
+ - this.state - initializes state
+  - videoSearch - initializes and updates the state videos and selected video 
+
+  - Passing Props/ argument
+    <VideoList videos={this.state.videos} />
+  - Passing anonymous function using props - onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
+  - Passing method using props - onSearchTermChange={videoSearch} 
+   
+  - throttling - _.debounce comes from import _ from "lodash"; 
+*/}
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +46,8 @@ class App extends Component {
 
     return (
       <div>
-        <SearchBar onSearchTermChange={videoSearch} />
+         {/* Child Component*/}
+        <SearchBar onSearchTermChange={videoSearch} />  {/* Searchbar Step 2 : */}
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
@@ -46,4 +58,5 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.querySelector(".container"));
+ {/* Parent Component gets injected*/}
+ReactDOM.render(<App />, document.querySelector(".container")); 
