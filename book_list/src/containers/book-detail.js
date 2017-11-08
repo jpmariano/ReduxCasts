@@ -16,7 +16,7 @@ class BookDetail extends Component {
     );
   }
 }
-
+//Mapping book active state data to book props 
 function mapStateToProps(state) {
   return {
     book: state.activeBook
